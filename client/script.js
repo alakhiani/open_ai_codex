@@ -84,8 +84,10 @@ const handleSubmit = async(e) => {
   const messageDiv = document.getElementById(uniqueId);
   loader(messageDiv);
 
+  // See index.html for the value, it uses localhost on workstation, and detects the process env variable on the remote environment
+  const backend_url = window.env.BACKEND_URL;
+  
   // Fetch the data from the server
-  const backend_url = 'https://codex-j414.onrender.com/';
   const response = await fetch(backend_url, {
     method: 'POST',
     headers: {
