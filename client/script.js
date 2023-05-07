@@ -85,7 +85,8 @@ const handleSubmit = async(e) => {
   loader(messageDiv);
 
   // Fetch the data from the server
-  const response = await fetch('http://localhost:5174', {
+  const backend_url = 'https://codex-j414.onrender.com/';
+  const response = await fetch(backend_url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
