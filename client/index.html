@@ -21,22 +21,6 @@
         <button type="submit"><img src="assets/send.svg" /></button>
       </form>
     </div>
-    <script>
-      // Set the BACKEND_URL environment variable if it is defined
-      if (
-        typeof process !== "undefined" &&
-        process.env &&
-        process.env.BACKEND_URL
-      ) {
-        window.env = {
-          BACKEND_URL: process.env.BACKEND_URL,
-        };
-      } else {
-        window.env = {
-          BACKEND_URL: "http://localhost:5174",
-        };
-      }
-    </script>
     <script type="module" src="script.js"></script>
   </body>
 </html>
