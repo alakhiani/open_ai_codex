@@ -85,9 +85,8 @@ const handleSubmit = async(e) => {
   loader(messageDiv);
 
   // See index.html for the value, it uses localhost on workstation, and detects the process env variable on the remote environment
-  console.log("Var 1:", process.env.__LOCAL_BACKEND_URL__);
-  console.log("Var 2:", process.env.__BACKEND_URL__);
-  const backend_url = process.env.__BACKEND_URL__ || process.env.__LOCAL_BACKEND_URL__;
+  console.log("Var 1:", import.meta.env.VITE_BACKEND_URL);
+  const backend_url = import.meta.env.VITE_BACKEND_URL;
   
   // Fetch the data from the server
   const response = await fetch(backend_url, {
