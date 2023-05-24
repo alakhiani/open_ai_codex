@@ -5,27 +5,38 @@
     <link rel="icon" type="image/svg+xml" href="favicon.ico" />
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodeX - Your Coding AI</title>    
+    <title>CodeX - Your Coding AI</title>
   </head>
   <body>
     <div id="app">
       <div id="chat_container"></div>
 
       <form>
-        <textarea name="prompt" rows="1" cols="1" placeholder="Ask Codex..."></textarea>
+        <textarea
+          name="prompt"
+          rows="1"
+          cols="1"
+          placeholder="Ask Codex..."
+        ></textarea>
         <button type="submit"><img src="assets/send.svg" /></button>
       </form>
     </div>
     <script>
-      window.env = {
-        BACKEND_URL: 'http://localhost:5174'
-      };
-    
       // Set the BACKEND_URL environment variable if it is defined
-      if (typeof process !== 'undefined' && process.env && process.env.BACKEND_URL) {
-        window.env.BACKEND_URL = process.env.BACKEND_URL;
+      if (
+        typeof process !== "undefined" &&
+        process.env &&
+        process.env.BACKEND_URL
+      ) {
+        window.env = {
+          BACKEND_URL: process.env.BACKEND_URL,
+        };
+      } else {
+        window.env = {
+          BACKEND_URL: "http://localhost:5174",
+        };
       }
-    </script>      
+    </script>
     <script type="module" src="script.js"></script>
   </body>
 </html>
